@@ -18,3 +18,11 @@ def submit():
                            name=input_name,
                            age=input_age,
                            city=input_city)
+
+
+@app.route("/query")
+def process_query(q):
+    if q == "dinosaur":
+        return "Dinosaurs ruled the Earth 200 million years ago"
+    else:
+        return "Unknown"
