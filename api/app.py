@@ -10,7 +10,6 @@ def hello_world():
 
 @app.route("/submit", methods=["POST"])
 
-
 def submit():
   input_name = request.form.get("name")
   input_age = request.form.get("age")
@@ -19,4 +18,3 @@ def submit():
     name=input_name,
 	age=input_age,
 	city=input_city)
-
