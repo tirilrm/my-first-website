@@ -23,7 +23,7 @@ jobs:
     - name: Install flask
       run: pip install Flask
     - name: Install pytest
-    run: pip install pytest
+      run: pip install pytest
     - name: Run pytest
       run: pytest api/
   deploy-to-vercel:
