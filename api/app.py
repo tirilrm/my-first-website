@@ -22,7 +22,7 @@ def submit():
 
 @app.route("/query")
 def process_query(q):
-    if q == "dinosaur":
+    if q == "dinosaurs":
         return "Dinosaurs ruled the Earth 200 million years ago"
     else:
         return "Unknown"
