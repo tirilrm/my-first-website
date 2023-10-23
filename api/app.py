@@ -11,7 +11,6 @@ def hello_world():
 
     return render_template("index.html")
 
-
 @app.route("/submit", methods=["POST"])
 
 
