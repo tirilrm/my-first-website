@@ -17,10 +17,10 @@ def hello_world():
 
 def submit():
 
-    input_name=request.form.get("name")
-    input_age=request.form.get("age")
-    input_city=request.form.get("city")
+    input_name = request.form.get("name")
+    input_age = request.form.get("age")
+    input_city = request.form.get("city")
     return render_template("hello.html",
-                           name = input_name,
-                           age = input_age,
-                           city = input_city)
+                           name=input_name,
+                           age=input_age,
+                           city=input_city)
