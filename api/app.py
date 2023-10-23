@@ -9,7 +9,6 @@ def hello_world():
     return render_template("index.html") 
 
 
-
 @app.route("/submit", methods=["POST"])
 def submit():
     input_name = request.form.get("name")
