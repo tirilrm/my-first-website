@@ -19,15 +19,12 @@ def submit():
                            age=input_age,
                            city=input_city)
 
-
-@app.route("/query", methods=["GET"])
-def process_query():
-    q = request.args.get('q', default=None)
-    if q == "dinosaurs":
+def process_query(query):
+    if "dinosaurs" in query:
         return "Dinosaurs ruled the Earth 200 million years ago"
     else:
         return "Unknown"
 
-
-if __name__ == "__main__":
-    app.run()
+@app.route("/query")
+def query():
+    return process_query(request.args.get('q', default="", type=str))
