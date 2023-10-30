@@ -29,3 +29,8 @@ def test_product_of_two_numbers():
 def test_of_sum_of_two_numbers():
     assert process_query(
          "57 plus 18") == "75"
+
+
+def test_minus():
+    assert process_query(
+        "64 minus 59") == "5"

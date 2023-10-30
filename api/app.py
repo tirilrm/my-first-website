@@ -35,6 +35,9 @@ def process_query(query):
     elif "plus" in query:
         numlist = [int(i) for i in re.findall(r'\d+', query)]
         return str(numlist[0] + numlist[1])
+    elif "minus" in query:
+        numlist = [int(i) for i in re.findall(r'\d+', query)]
+        return str(numlist[0] - numlist[1])
     else:
         return "Unknown"
 
