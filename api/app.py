@@ -68,7 +68,7 @@ def is_prime(num):
 
 
 def is_square_and_cube(num):
-    if round(num ** 0.5) ** 2 == num:
+    if round(num ** (1/2)) ** 2 == num:
         if round(num ** (1/3)) ** 3 == num:
             return True
     else:
