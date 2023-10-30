@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import re
 
 
 app = Flask(__name__)
@@ -25,8 +26,9 @@ def process_query(query):
         return "Dinosaurs ruled the Earth 200 million years ago"
     elif "name" in query:
         return "Ak_Tiril"
-    elif "Which of the following numbers is the largest" in query:
-        return get_largest_number(query)
+    elif "largest" in query:
+        numlist = re.findall(r'\d', query)
+        return str(max(list(map(int, numlist))))
     else:
         return "Unknown"
 
@@ -34,11 +36,3 @@ def process_query(query):
 @app.route("/query")
 def query():
     return process_query(request.args.get('q', default="", type=str))
-
-
-def get_largest_number(str1):
-    res = []
-    for i in str1.split():
-        if i.isdigit():
-            res.append(i)
-    return str(max(res))
