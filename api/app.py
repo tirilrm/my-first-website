@@ -29,6 +29,9 @@ def process_query(query):
     elif "largest" in query:
         numlist = re.findall(r'\d+', query)
         return str(max(list(map(int, numlist))))
+    elif "multiplied" in query:
+        numlist = re.findall(r'\d+', query)
+        return numlist[0] * numlist[1]
     else:
         return "Unknown"
 
