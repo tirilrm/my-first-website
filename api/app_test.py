@@ -20,6 +20,7 @@ def test_largest_number():
     assert process_query(
         "largest: 30, 50, 40?") == "50"
 
+
 def test_product_of_two_numbers():
     assert process_query(
         "10 multiplied by 20") == "200"
