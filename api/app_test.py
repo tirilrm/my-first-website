@@ -1,4 +1,4 @@
-from app import process_query, get_largest_number, query
+from app import process_query
 
 
 def test_knows_about_dinosaurs():
