@@ -43,6 +43,11 @@ def process_query(query):
         for num in numlist:
             if (is_prime(num)):
                 return str(num)
+    elif "square" in query:
+        numlist = [int(i) for i in re.findall(r'\d+', query)]
+        for num in numlist:
+            if (is_square_and_cube):
+                return str(num)
     else:
         return "Unknown"
 
@@ -58,3 +63,10 @@ def is_prime(num):
         if num % i == 0:
             flag = False
     return flag
+
+
+def is_square_and_cube(num):
+    if num ** 0.5 % 1 == 0 and num ** (1/3) % 1 == 0:
+        return True
+    else:
+        return False
