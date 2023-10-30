@@ -40,9 +40,11 @@ def process_query(query):
         return str(numlist[0] - numlist[1])
     elif "primes" in query:
         numlist = [int(i) for i in re.findall(r'\d+', query)]
+        primelist = []
         for num in numlist:
             if (is_prime(num)):
-                return str(num)
+                    primelist.append(num)
+        return str(primelist)
     elif "square" in query:
         numlist = [int(i) for i in re.findall(r'\d+', query)]
         for num in numlist:

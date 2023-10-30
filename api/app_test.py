@@ -41,6 +41,16 @@ def test_primes():
         "primes: 71, 51, 15, 44, 62") == "71"
 
 
+def test_primes_2():
+    assert process_query(
+        "primes: 89, 7, 44, 93, 34") == "7"
+
+
+def test_primes():
+    assert process_query(
+        "primes: 37, 82, 75, 57, 41") == "37, 41"
+
+
 def test_square_and_cube():
     assert process_query(
         "square and a cube: 2162, 676, 64, 27, 1834, 2176, 3954") == "64"
