@@ -27,7 +27,7 @@ def process_query(query):
     elif "name" in query:
         return "Ak_Tiril"
     elif "largest" in query:
-        numlist = re.findall(r'\d', query)
+        numlist = re.findall(r'\d+', query)
         return str(max(list(map(int, numlist))))
     else:
         return "Unknown"
