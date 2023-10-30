@@ -31,7 +31,7 @@ def process_query(query):
         return str(max(list(map(int, numlist))))
     elif "multiplied" in query:
         numlist = re.findall(r'\d+', query)
-        return int(numlist[0]) * int(numlist[1])
+        return str(int(numlist[0]) * int(numlist[1]))
     else:
         return "Unknown"
 
