@@ -25,7 +25,7 @@ def process_query(query):
         return "Dinosaurs ruled the Earth 200 million years ago"
     elif "name" in query:
         return "Ak_Tiril"
-    elif "numbers" in query:
+    elif "Which of the" in query:
         return get_largest_number(query)
     else:
         return "Unknown"
