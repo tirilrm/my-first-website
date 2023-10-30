@@ -48,7 +48,7 @@ def test_primes_2():
 
 def test_multiple_primes():
     assert process_query(
-        "primes: 37, 82, 75, 57, 41") == "37, 41"
+        "primes: 37, 82, 75, 57, 41") == "[37, 41]"
 
 
 def test_square_and_cube():
