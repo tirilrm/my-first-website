@@ -18,4 +18,5 @@ def test_knows_team_name():
 
 def test_largest_number():
     assert process_query(
-        "numbers") == get_largest_number(query)
+        "Which of the following numbers is the largest: 30, 40, 50") \
+            == get_largest_number(query)
