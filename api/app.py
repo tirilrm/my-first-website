@@ -38,6 +38,11 @@ def process_query(query):
     elif "minus" in query:
         numlist = [int(i) for i in re.findall(r'\d+', query)]
         return str(numlist[0] - numlist[1])
+    elif "primes" in query:
+        numlist = [int(i) for i in re.findall(r'\d+', query)]
+        for num in numlist:
+            if (is_prime(num)):
+                return str(num)
     else:
         return "Unknown"
 
@@ -45,3 +50,11 @@ def process_query(query):
 @app.route("/query")
 def query():
     return process_query(request.args.get('q', default="", type=str))
+
+
+def is_prime(num):
+    flag = True
+    for i in range(2, num):
+        if num % i == 0:
+            flag = False
+    return flag
