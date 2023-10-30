@@ -18,4 +18,4 @@ def test_knows_team_name():
 
 def test_largest_number():
     assert process_query(
-        "largest: 30, 40, 50") == "50"
+        "largest: 30, 50, 40?") == "50"
