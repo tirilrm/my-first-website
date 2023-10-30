@@ -32,6 +32,9 @@ def process_query(query):
     elif "multiplied" in query:
         numlist = re.findall(r'\d+', query)
         return str(int(numlist[0]) * int(numlist[1]))
+    elif "plus" in query:
+        numlist = [int(i) for i in re.findall(r'\d+', query)]
+        return str(numlist[0] + numlist[1])
     else:
         return "Unknown"
 

@@ -24,3 +24,8 @@ def test_largest_number():
 def test_product_of_two_numbers():
     assert process_query(
         "10 multiplied by 20") == "200"
+
+
+def test_of_sum_of_two_numbers():
+    assert process_query(
+         "57 plus 18") == "75"
