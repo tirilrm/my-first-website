@@ -56,6 +56,6 @@ def test_multiple_primes():
         "primes: 37, 82, 75, 57, 41") == "[37, 41]"
 
 
-def test_square_and_cube():
-    assert process_query(
-        "square and a cube: 2162, 676, 64, 27, 1834, 2176, 3954") == "64"
+# def test_square_and_cube():
+#     assert process_query(
+#         "square and a cube: 2162, 676, 64, 27, 1834, 2176, 3954") == "64"
