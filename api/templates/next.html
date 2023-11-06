@@ -4,10 +4,10 @@
 <body style="background-color:rgb(255, 127, 244)">
     <h1>Good <strong>afternoon</strong>!</h1>
     <p>You are: {{ username }}</p>
-    <p>Your really cool repos are:</p>
+    <p>Your really really cool repos are:</p>
     <ol>
         {% for repo in repo_names %}
-            <li>{{ repo }}</li>
+            <li>{{ repo[0] }} updated at: {{ repo[1] }}</li>
         {% endfor %}
     </ol>
 </body>
