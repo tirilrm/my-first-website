@@ -25,16 +25,15 @@ def submit():
 @app.route("/next", methods=["POST"])
 def next():
     input_username = request.form.get("username")
+    # Connecting to GitHub API from Python
+    response = requests.get("https://api.github.com/users/" +
+        str(request.form.get("username")) + "/repos")
+    if response.status_code == 200:
+        repos = response.json()
+        for repo in repos:
+            print(repo["full_name"])
     return render_template("next.html",
                            username=input_username)
-
-
-# Connecting to GitHub API from Python
-response = requests.get("https://api.github.com/users/" + request.form.get("username") + "/repos")
-if response.status_code == 200:
-    repos = response.json()
-    for repo in repos:
-        print(repo["full_name"])
 
 
 def process_query(query):
