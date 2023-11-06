@@ -74,7 +74,7 @@ def is_prime(num):
     return flag
 
 
-def is_square_and_cube(num): 
+def is_square_and_cube(num):
     if round(num ** (1/2)) ** 2 == num:
         if round(num ** (1/3)) ** 3 == num:
             return True
