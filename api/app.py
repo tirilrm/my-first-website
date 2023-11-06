@@ -33,7 +33,9 @@ def next():
         repos = response.json()
         repo_names = []
         for repo in repos:
-            url = "https://api.github.com/repos/" + str(repo["full_name"]) + "/commits"
+            url = ("https://api.github.com/repos/" +
+                   str(repo["full_name"]) +
+                   "/commits")
             print("Requesting..." + url)
             response2 = requests.get(url)
             repos2 = response2.json()
