@@ -7,8 +7,13 @@
     <p>Your really really cool repos are:</p>
     <ol>
         {% for repo in repo_names %}
-            <li>{{ repo[0] }} updated at: {{ repo[1] }}</li>
+            <li>{{ repo[0] }} <br>
+                updated at: {{ repo[1] }} <br>
+                under hash: {{ repo[2] }} <br>
+                by author: {{ repo[3] }}</li>
         {% endfor %}
     </ol>
+    <p>{{ repo_names[0][3] }} is a fantastic human being who loves Software Systems Engineering.</p> 
+    <p> thank you !</p>
 </body>
 </html>

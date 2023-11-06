@@ -27,14 +27,27 @@ def next():
     input_username = request.form.get("username")
     # Connecting to GitHub API from Python
     response = requests.get("https://api.github.com/users/" +
-                            str(request.form.get("username")) +
+                            str(input_username) +
                             "/repos")
     if response.status_code == 200:
         repos = response.json()
         repo_names = []
         for repo in repos:
-            print(repo["full_name"])
-            repo_names.append([repo["full_name"], repo["updated_at"]])
+            url = "https://api.github.com/repos/" + str(repo["full_name"]) + "/commits"
+            print("Requesting..." + url)
+            response2 = requests.get(url)
+            repos2 = response2.json()
+            if len(repos2) == 0:
+                repo_names.append([repo["full_name"],
+                                   repo["updated_at"],
+                                   "no hash",
+                                   "no author"])
+            else:
+                commit = repos2[0]
+                repo_names.append([repo["full_name"],
+                                   repo["updated_at"],
+                                   commit["sha"],
+                                   commit["commit"]["author"]["name"]])
     return render_template("next.html",
                            username=input_username,
                            repo_names=repo_names)
