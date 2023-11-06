@@ -27,7 +27,8 @@ def next():
     input_username = request.form.get("username")
     # Connecting to GitHub API from Python
     response = requests.get("https://api.github.com/users/" +
-    str(request.form.get("username")) + "/repos")
+                            str(request.form.get("username")) +
+                            "/repos")
     if response.status_code == 200:
         repos = response.json()
         for repo in repos:
