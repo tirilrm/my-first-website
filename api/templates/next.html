@@ -2,7 +2,13 @@
 <head>
 </head>
 <body style="background-color:rgb(255, 127, 244)">
-    <h1>Good <strong>after</strong> noon !</h1>
+    <h1>Good <strong>afternoon</strong>!</h1>
     <p>You are: {{ username }}</p>
+    <p>Your really cool repos are:</p>
+    <ol>
+        {% for repo in repo_names %}
+            <li>{{ repo }}</li>
+        {% endfor %}
+    </ol>
 </body>
 </html>

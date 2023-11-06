@@ -31,10 +31,13 @@ def next():
                             "/repos")
     if response.status_code == 200:
         repos = response.json()
+        repo_names = []
         for repo in repos:
             print(repo["full_name"])
+            repo_names.append(repo["full_name"])
     return render_template("next.html",
-                           username=input_username)
+                           username=input_username,
+                           repo_names=repo_names)
 
 
 def process_query(query):
