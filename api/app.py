@@ -32,11 +32,9 @@ def next():
     if response.status_code == 200:
         repos = response.json()
         repo_names = []
-        #repo_dates = []
         for repo in repos:
             print(repo["full_name"])
             repo_names.append([repo["full_name"], repo["updated_at"]])
-            #repo_dates.append(repo["updated_at"])
     return render_template("next.html",
                            username=input_username,
                            repo_names=repo_names)
